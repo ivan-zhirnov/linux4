@@ -13,10 +13,6 @@
 3. Убеждаемся, что у дисков появился раздел md0: `sudo lsblk`  
 ![](https://sun9-9.userapi.com/impg/97bk-li9K3S36cfjQtjKG42BReGsxpf4tcTauQ/i7ECmMnOaPY.jpg?size=517x309&quality=96&proxy=1&sign=ed8f878a39dd82604f97180ed8901c17&type=album)
 
-### Создаем на Raid-устройстве раздел и файловую систему
-1. Создаем файловую систему: `sudo mkfs.ext4 /dev/md0`
-2. Монтируем раздел: `sudo mkfs.ext4 /dev/md0`
-
 ### Ломаем один из дисков и восстанавливаем RAID-массив
 1. Удаляем один виртуальный диск   
 ![](https://sun9-65.userapi.com/impg/vlW7w5Xb6U2iP9Kk2LTI8BqytnR5aTpNG8uKGQ/-JWguxZreBo.jpg?size=637x202&quality=96&proxy=1&sign=21fa64c3fa8fce607293c36ddcd536d6&type=album)
@@ -31,7 +27,7 @@
 1. Создаем раздел  
 ![](https://sun9-47.userapi.com/impg/-Jy2rX4R5hHXNAVkgTaK9AeHXSYO8JgwXZhrEw/XCX-z6DwwLU.jpg?size=688x193&quality=96&proxy=1&sign=766d198794e669725fa26f7112a28143&type=album)
 2. Создаем файловую систему 
-`sudo mkfs.ext4 /dev/md0p1`
+`sudo mkfs.ext4 /dev/md0`
 
 ### Добавляем запись в fstab
 1. Узнаем UUID диска
