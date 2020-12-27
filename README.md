@@ -12,12 +12,7 @@
 2. Создаем RAID-массив: `sudo mdadm --create --verbose /dev/md0 -l 10 -n 5 /dev/sd{b,c,d,e,f}`
 3. Убеждаемся, что у дисков появился раздел md0: `sudo lsblk`  
 ![](https://sun9-9.userapi.com/impg/97bk-li9K3S36cfjQtjKG42BReGsxpf4tcTauQ/i7ECmMnOaPY.jpg?size=517x309&quality=96&proxy=1&sign=ed8f878a39dd82604f97180ed8901c17&type=album)
-4. Создаем конфигурационный файл mdadm.conf:
-```
-echo "DEVICE partitions" > /etc/mdadm/mdadm.conf
-mdadm --detail --scan --verbose | awk '/ARRAY/ {print}' >> /etc/mdadm/mdadm.conf
-```  
-![](https://sun9-24.userapi.com/impg/EaO72f33KuYzzM2vbZDiF3Q0U1SIC0iKgfIb_w/kQykxwSIykM.jpg?size=995x57&quality=96&proxy=1&sign=a9f2770df5faa48acc6af1e2799259e6&type=album)
+
 ### Создаем на Raid-устройстве раздел и файловую систему
 1. Создаем файловую систему: `sudo mkfs.ext4 /dev/md0`
 2. Монтируем раздел: `sudo mkfs.ext4 /dev/md0`
